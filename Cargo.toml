@@ -1,0 +1,23 @@
+[package]
+name = "smartdesk"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rppal = "0.17.1"
+hc-sr04 = { git = "https://github.com/Rahel-A/hc-sr04", rev = "fac901b" }
+# hc-sr04 = { git = "https://github.com/Rahel-A/hc-sr04", rev = "769d28d20f9bda2d2abb07ba4f9cc616eb03d1b5" }
+serde = { version = "1.0", features = ["derive"] }
+toml = "0.8"
+debounce = "0.2"
+log = "0.4"
+env_logger = "0.11"
+
+# reduces size from 4.8M to 500K
+[profile.release]
+strip = true
+opt-level = "z"
+lto = true
+codegen-units = 1

@@ -1,0 +1,11 @@
+[Unit]
+Description=A smart desk controller
+After=multi-user.target
+
+[Service]
+ExecStart=/home/desk1/smartdesk
+Restart=always
+RestartSec=10s
+
+[Install]
+WantedBy=multi-user.target
